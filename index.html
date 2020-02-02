@@ -17,56 +17,71 @@
       gtag('config', 'UA-140468719-1');
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link id="light-style-link" rel="stylesheet" href="https://quizbug2.herokuapp.com/style.css">
+    <link rel="stylesheet" href="dark-style.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://quizbug2.herokuapp.com/favicon.ico"/>
   </head>
   <body>
     <div id="top">
-      <h1>
-	QuizBug 2
-      </h1>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+          <span class="navbar-brand h1">QuizBug2</span>
+        </nav>
     </div>
     <div id="main">
-    <div id="buttons">
+    <div id="buttons" class="btn-group" role="group" aria-label="Basic example">
+        <button class="control-btn btn btn-primary" id="s">Search</button>
+        <button class="control-btn btn btn-secondary" id="r">Randomize</button>
+        <button class="control-btn btn btn-warning" id="m">Back</button>
+        <button class="control-btn btn btn-success" id="n">Next</button>
+        <button class="control-btn btn btn-danger" id="b">Buzz/Reveal</button>
+    </div>
+<!--    <div id="buttons">
       <button class="control-btn btn btn-primary" id="s">Search</button>
-      <button class="control-btn btn btn-dark" id="r">Randomize</button>
+      <button class="control-btn btn btn-secondary" id="r">Randomize</button>
       <button class="control-btn btn btn-warning" id="m">Back</button>
       <button class="control-btn btn btn-success" id="n">Next</button>
       <button class="control-btn btn btn-danger" id="b">Buzz/Reveal</button>
-      </div>
-      <nav aria-label="breadcrumb"><ol id="metadata" class="breadcrumb">I contain metadata! (tournament name, difficulty, 
+  </div> -->
+      <nav aria-label="breadcrumb"><ol id="metadata" class="breadcrumb">I contain metadata! (tournament name, difficulty,
 category, subcategory)</ol></nav>
-      <div id="update" class="alert alert-success">QuizBug 2 has changed! Check out <a href="/update" 
+      <div id="update" class="alert alert-success">QuizBug 2 has changed! Check out <a href="/update"
 class=".alert-link">/update</a> for more info, and thanks for using QuizBug 2! &lt;3</div>
       <div id="question" class="jumbotron">Nothing right now!</div>
-      <div id="answer-div" class="alert alert-info"><span id="answer">Answer shows up here!</span><a id="negged">I was 
+      <div id="answer-div" class="alert alert-info"><span id="answer">Answer shows up here!</span><a id="negged">I was
 wrong.</a></div>
     </div>
     <div id="right">
-      <p>Questions taken from QuizDB. To adjust search parameters, mess around with the inputs below. Press [s] to search, 
-otherwise same QuizBug keybinds. Info + Help can be found at <a href="/info">/info</a>. Hopefully the text selector thingies 
-are intuitive. Have fun!</p>
-      <p>Made by Karan Gurazada. GitHub @ <a href="https://github.com/kgurazad/quizbug2">https://github.com/kgurazad/quizbug2</a>.</p>
-      <p>
+        <p>Questions taken from QuizDB. To adjust search parameters, mess around with the inputs below. Press [s] to search,
+      otherwise same QuizBug keybinds. Info + Help can be found at <a href="/info">/info</a>. Hopefully the text selector thingies
+      are intuitive. Have fun!</p>
+        <p>Made by Karan Gurazada - <a href="https://github.com/kgurazad/quizbug2">Github</a></p>
+        <div class="alert alert-dark" role="alert">
+          <h6>Session Stats:</h6>
+          <hr>
+          <span id="powers"></span>/<span id="gets"></span>/<span id="negs"></span> over <span id="tuh"></span> TUH
+          <hr>
+          <a id="clear-session">Clear Current Session</a>
+        </div>
+
+      <!-- <p>
         Current Session Stats: <span id="powers"></span>/<span id="gets"></span>/<span id="negs"></span> over <span id="tuh"></span> TUH
         <br>
         <a id="clear-session">Clear Current Session</a>
-      </p>
+    </p> -->
       <input autocomplete="off" id="readSpeed" placeholder="120" value="120">
       <input autocomplete="off" id="query" placeholder="search for...">
       <div id="around-categories" class="around-input">
-        <input autocomplete="off" id="categories" placeholder="Science,History">
+        <input autocomplete="off" id="categories" placeholder="Which Subject?">
         <ul id="under-categories" class="list-group under-input">
         </ul>
       </div>
       <div id="around-subcategories" class="around-input">
-        <input autocomplete="off" id="subcategories" placeholder="Science Physics,History European">
+        <input autocomplete="off" id="subcategories" placeholder="Which Subcategory?">
         <ul id="under-subcategories" class="list-group under-input">
         </ul>
       </div>
-      <input autocomplete="off" id="difficulties" placeholder="2,4,6,9">
+      <input autocomplete="off" id="difficulties" placeholder="Difficulty from 1 to 9">
       <div id="around-tournaments" class="around-input">
-        <input autocomplete="off" id="tournaments" placeholder="2018 SMT,2011 MUT,HFT,2009">
+        <input autocomplete="off" id="tournaments" placeholder="Specific Set?">
         <ul id="under-tournaments" class="list-group under-input">
         </ul>
       </div>
@@ -84,7 +99,7 @@ are intuitive. Have fun!</p>
       -->
       <br>
       <button id="p" class="btn">Buttons</button>
-      <button id="style-toggle" class="btn">Dark Mode</button>
+      <!--<button id="style-toggle" class="btn">Dark Mode</button>-->
     </div>
   </body>
 </html>
